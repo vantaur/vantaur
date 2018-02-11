@@ -35,7 +35,7 @@ BUILD ON LINUX
 -----------
 Install the dependencies required to build Vantaur:
 ```
-sudo apt-get install build-essential libssl-dev libboost-all-dev libqrencode-dev pkg-config libminiupnpc-dev qt5-default qttools5-dev-tools libgmp3-dev
+sudo apt-get install build-essential libssl-dev libboost-all-dev libqrencode-dev pkg-config libminiupnpc-dev qt5-default qttools5-dev-tools libgmp3-dev autoconf automake
 
 sudo add-apt-repository ppa:bitcoin/bitcoin
 sudo apt-get update
