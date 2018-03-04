@@ -66,4 +66,4 @@ Execute the following commands in the Terminal to install Vantaur:
 
 For more information please visit the website:
 
-http://vantaur.ml
+http://vantaur.tk
