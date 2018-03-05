@@ -27,7 +27,7 @@ Vantaur is a powerful PoW + PoS hybrid cryptocurrency with a high-reward mastern
 |:-----------|:-----------|
 | Bitcointalk | https://bitcointalk.org/index.php?topic=2914598 |
 | Discord | https://discord.gg/W3UM8VF |
-| Website | http://www.vantaur.ml |
+| Website | http://www.vantaur.tk |
 
 
 
