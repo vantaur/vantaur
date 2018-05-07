@@ -8,7 +8,7 @@ CYAN='\033[01;36m'
 WHITE='\033[01;37m'
 BOLD='\033[1m'
 UNDERLINE='\033[4m'
-MAX=10
+MAX=9
 
 COINGITHUB=https://github.com/vantaur/vantaur.git
 SENTINELGITHUB=NOSENTINEL
@@ -77,7 +77,7 @@ installFail2Ban() {
 
 installFirewall() {
     echo
-    echo -e "[5/${MAX}] Installing UFW. Please wait..."
+    echo -e "[4/${MAX}] Installing UFW. Please wait..."
     sudo apt-get -y install ufw > /dev/null 2>&1
     sudo ufw default deny incoming > /dev/null 2>&1
     sudo ufw default allow outgoing > /dev/null 2>&1
@@ -92,7 +92,7 @@ installFirewall() {
 
 installDependencies() {
     echo
-    echo -e "[6/${MAX}] Installing dependecies. Please wait..."
+    echo -e "[5/${MAX}] Installing dependecies. Please wait..."
     sudo apt-get install git nano rpl wget python-virtualenv -qq -y > /dev/null 2>&1
     sudo apt-get install build-essential libtool automake autoconf -qq -y > /dev/null 2>&1
     sudo apt-get install autotools-dev autoconf pkg-config libssl-dev -qq -y > /dev/null 2>&1
@@ -108,7 +108,7 @@ installDependencies() {
 
 compileWallet() {
     echo
-    echo -e "[7/${MAX}] Compiling wallet. Please wait..."
+    echo -e "[6/${MAX}] Compiling wallet. Please wait..."
     git clone $COINGITHUB $COINSRCDIR > /dev/null 2>&1
     cd $COINSRCDIR/src > /dev/null 2>&1
     chmod 755 makefile.unix > /dev/null 2>&1
@@ -118,7 +118,7 @@ compileWallet() {
 
 installWallet() {
     echo
-    echo -e "[9/${MAX}] Configuring wallet. Please wait..."
+    echo -e "[7/${MAX}] Configuring wallet. Please wait..."
     echo -e "NOTE: This could take 30 minutes- go grab a coffee..."
     cd /root/$COINSRCDIR/src
     strip $COINDAEMON
@@ -127,7 +127,7 @@ installWallet() {
 
 configureWallet() {
     echo
-    echo -e "[9/${MAX}] Configuring wallet. Please wait..."
+    echo -e "[8/${MAX}] Configuring wallet. Please wait..."
     sudo mkdir -p /root/$COINCORE
     sudo touch /root/$COINCORE/$COINCONFIG
     sleep 10
@@ -146,7 +146,7 @@ configureWallet() {
 
 startWallet() {
     echo
-    echo -e "[10/${MAX}] Starting wallet daemon..."
+    echo -e "[9/${MAX}] Starting wallet daemon..."
     cd /root/$COINSRCDIR/src
     sudo cp $COINDAEMON /usr/local/bin
     sudo ./$COINDAEMON -daemon > /dev/null 2>&1
